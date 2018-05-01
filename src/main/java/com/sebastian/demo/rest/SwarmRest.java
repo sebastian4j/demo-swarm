@@ -12,17 +12,19 @@ import javax.ws.rs.core.Response;
  */
 @Path("/hello")
 public class SwarmRest {
+    @Path("/hola")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Saludo saludar() {
-        var s = new Saludo();
+        Saludo s = new Saludo();
         s.setMensaje("Hola!!");
         return s;
     }
+    @Path("/chao")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response despedida() {
-        var s = new Saludo();
+        Saludo s = new Saludo();
         s.setMensaje("Chao!!");
         return Response.ok(s).build();
     }    
